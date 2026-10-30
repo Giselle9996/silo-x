@@ -1,0 +1,44 @@
+<svg viewBox="0 0 600 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract illustration of a ring opening outward with drifting particles, suggesting freedom and open time">
+	<defs>
+		<linearGradient id="chrome1" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" stop-color="#eef0f2"/>
+			<stop offset="35%" stop-color="#c4c7cb"/>
+			<stop offset="55%" stop-color="#868a92"/>
+			<stop offset="75%" stop-color="#d4d7db"/>
+			<stop offset="100%" stop-color="#eef0f2"/>
+		</linearGradient>
+		<radialGradient id="fade1" cx="50%" cy="50%" r="50%">
+			<stop offset="0%" stop-color="#f5f3ef" stop-opacity="0.9"/>
+			<stop offset="100%" stop-color="#f5f3ef" stop-opacity="0"/>
+		</radialGradient>
+	</defs>
+
+	<circle cx="340" cy="220" r="150" fill="none" stroke="url(#chrome1)" stroke-width="1.5" opacity="0.9"/>
+	<circle cx="340" cy="220" r="112" fill="none" stroke="#9ba0a7" stroke-width="1" opacity="0.4"/>
+	<circle cx="340" cy="220" r="150" fill="none" stroke="#9ba0a7" stroke-width="1" stroke-dasharray="2 10" opacity="0.5"/>
+
+	<!-- sunburst ticks, top right quadrant, breaking free of the ring -->
+	<g stroke="url(#chrome1)" stroke-width="2" stroke-linecap="round">
+		<line x1="430" y1="110" x2="452" y2="88"/>
+		<line x1="460" y1="150" x2="490" y2="138"/>
+		<line x1="470" y1="200" x2="504" y2="198"/>
+		<line x1="460" y1="250" x2="492" y2="262"/>
+		<line x1="430" y1="290" x2="452" y2="312"/>
+	</g>
+
+	<!-- drifting particles, escaping toward bottom left -->
+	<circle cx="250" cy="310" r="7" fill="#f5f3ef"/>
+	<circle cx="195" cy="350" r="5" fill="#c4c7cb"/>
+	<circle cx="150" cy="385" r="3.5" fill="#9ba0a7"/>
+	<circle cx="112" cy="410" r="2.2" fill="#9ba0a7" opacity="0.7"/>
+	<circle cx="82" cy="428" r="1.4" fill="#9ba0a7" opacity="0.5"/>
+
+	<!-- a single open arc, like a horizon breaking across the ring -->
+	<path d="M 190 260 Q 340 340 500 230" fill="none" stroke="#f5f3ef" stroke-width="1.5" opacity="0.55"/>
+
+	<!-- small off-axis ring, counterpoint -->
+	<circle cx="120" cy="140" r="34" fill="none" stroke="#9ba0a7" stroke-width="1" opacity="0.5"/>
+	<circle cx="120" cy="140" r="3" fill="#f5f3ef"/>
+
+	<ellipse cx="340" cy="220" rx="230" ry="230" fill="url(#fade1)" opacity="0.08"/>
+</svg>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Started — SiloX</title>
+<meta name="description" content="Tell us what you need, a website, operations and automation, or both, and we'll follow up with next steps.">
+<link rel="canonical" href="https://silo-x.co/contact.html">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="chrome-top-edge"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+	<div class="wrap site-header__inner">
+		<a class="site-logo" href="index.html"><img src="img/logo-horizontal-white.svg" alt="SiloX" width="140" height="48"></a>
+		<nav class="primary-nav" id="primary-nav" aria-label="Primary">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="websites.html">Websites</a></li>
+				<li><a href="operations.html">Business Operations</a></li>
+				<li><a href="studio.html">Our Studio</a></li>
+				<li><a href="contact.html" aria-current="page">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="header-cta">
+			<button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav"><span class="visually-hidden">Menu</span>☰</button>
+		</div>
+	</div>
+</header>
+
+<main id="main">
+
+<section class="section--dark hero-section">
+	<div class="wrap hero" style="padding-block:clamp(3rem,5vw,5rem) 2rem;">
+		<p class="eyebrow hero__eyebrow">Get started</p>
+		<h1 class="display-h1 hero__headline" style="max-width:18ch;">Tell us what you need. We'll take it from <em class="accent">there</em>.</h1>
+		<p class="lead hero__lede" style="margin-top:1rem;">A few quick questions, then we'll follow up with next steps. No obligation, no hard sell.</p>
+	</div>
+</section>
+
+<section class="section section--light">
+	<div class="wrap" style="max-width:720px;">
+		<form id="inquiry-form" novalidate>
+			<p class="eyebrow">What do you need?</p>
+			<div class="path-choice" style="margin-top:1.25rem;">
+				<div>
+					<input type="radio" id="path-website" name="inquiry-path" value="website" checked>
+					<label for="path-website"><span class="choice-title">A website</span><span class="choice-desc">Custom design, $2,499</span></label>
+				</div>
+				<div>
+					<input type="radio" id="path-operations" name="inquiry-path" value="operations">
+					<label for="path-operations"><span class="choice-title">Operations &amp; automation</span><span class="choice-desc">Managed workflows</span></label>
+				</div>
+				<div>
+					<input type="radio" id="path-both" name="inquiry-path" value="both">
+					<label for="path-both"><span class="choice-title">Both</span><span class="choice-desc">Design and operations</span></label>
+				</div>
+				<div>
+					<input type="radio" id="path-other" name="inquiry-path" value="other">
+					<label for="path-other"><span class="choice-title">Something else</span><span class="choice-desc">A different question</span></label>
+				</div>
+			</div>
+
+			<div class="form-field">
+				<label for="name">Your name</label>
+				<input type="text" id="name" name="name" required>
+			</div>
+			<div class="form-field">
+				<label for="business">Business name</label>
+				<input type="text" id="business" name="business">
+			</div>
+			<div class="form-field">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required>
+			</div>
+
+			<div class="conditional-block is-visible" data-conditional="website">
+				<div class="form-field">
+					<label for="current-site">Current website, if you have one</label>
+					<input type="url" id="current-site" name="currentSite">
+				</div>
+				<div class="form-field">
+					<label for="site-objective">What's the main goal for the new site?</label>
+					<textarea id="site-objective" name="siteObjective"></textarea>
+				</div>
+			</div>
+
+			<div class="conditional-block" data-conditional="operations">
+				<div class="form-field">
+					<label for="company-size-op">Team size</label>
+					<input type="text" id="company-size-op" name="companySize" placeholder="e.g. Just me, 2 to 5, 6 to 20">
+				</div>
+				<div class="form-field">
+					<label for="challenges">What's your biggest operational headache right now?</label>
+					<textarea id="challenges" name="challenges"></textarea>
+				</div>
+				<div class="form-field">
+					<label for="software">What software or platforms do you already use?</label>
+					<input type="text" id="software" name="software">
+				</div>
+				<div class="form-field">
+					<label for="desired-workflows">Any specific processes you'd want automated?</label>
+					<textarea id="desired-workflows" name="desiredWorkflows"></textarea>
+				</div>
+			</div>
+
+			<div class="form-field">
+				<label for="message">Anything else we should know?</label>
+				<textarea id="message" name="message"></textarea>
+			</div>
+
+			<input type="text" name="company_website" class="honeypot-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+			<input type="hidden" name="plan" id="inquiry-plan-field" value="">
+
+			<button type="submit" class="btn btn--primary-on-light btn--block" id="inquiry-submit-btn">Send Inquiry</button>
+			<p class="form-status" id="inquiry-status" role="status"></p>
+			<p class="form-hint">We respond within 2 business days. We never ask for passwords through this form.</p>
+		</form>
+	</div>
+</section>
+
+</main>
+
+<footer class="site-footer section--dark" style="position:relative;overflow:hidden;">
+	<div class="wordmark-watermark" aria-hidden="true"><img src="img/logomark-white.svg" alt=""></div>
+	<div class="wrap" style="position:relative;">
+		<hr class="rule">
+		<div class="footer-grid" style="margin-top:3rem;">
+			<div class="footer-col">
+				<p class="site-logo"><img src="img/logo-horizontal-white.svg" alt="SiloX" width="150" height="52"></p>
+				<p style="margin-top:1rem;color:var(--text-on-dark-muted);max-width:32ch;">One team doing the design work and the operations work, not 5 vendors you have to manage yourself.</p>
+			</div>
+			<div class="footer-col">
+				<h4>Site</h4>
+				<ul>
+					<li><a href="websites.html">Websites</a></li>
+					<li><a href="operations.html">Business Operations</a></li>
+					<li><a href="studio.html">Our Studio</a></li>
+					<li><a href="faq.html">FAQ</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Contact</h4>
+				<ul>
+					<li><a href="mailto:contact@silo-x.co">contact@silo-x.co</a></li>
+					<li>Chicago, Illinois</li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Elsewhere</h4>
+				<ul>
+					<li><a href="https://instagram.com/silox_studio">Instagram</a></li>
+					<li><a href="https://linkedin.com/company/silox-ai">LinkedIn</a></li>
+					<li><a href="https://facebook.com/profile.php?id=61578733553728">Facebook</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>© 2026 SiloX. All rights reserved.</span>
+			<span><a href="legal/privacy.html">Privacy</a> · <a href="legal/terms.html">Terms</a></span>
+		</div>
+	</div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+(function () {
+	var params = new URLSearchParams(window.location.search);
+	var plan = params.get('plan');
+	if (plan) document.getElementById('inquiry-plan-field').value = plan;
+
+	document.getElementById('inquiry-form').addEventListener('submit', async function (e) {
+		e.preventDefault();
+		var form = e.target;
+		if (!window.siloxValidate(form)) return;
+		var btn = document.getElementById('inquiry-submit-btn');
+		var statusEl = document.getElementById('inquiry-status');
+		btn.disabled = true;
+		btn.textContent = 'Sending…';
+		try {
+			var res = await fetch('/api/submit-inquiry', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(window.siloxFormToIntake(form))
+			});
+			var data = await res.json().catch(function () { return {}; });
+			if (!res.ok) throw new Error(data.error || 'Could not send your inquiry.');
+			statusEl.textContent = 'Thanks, we\'ve got it. We\'ll follow up within 2 business days.';
+			statusEl.classList.add('is-visible', 'form-status--success');
+			form.reset();
+		} catch (err) {
+			statusEl.textContent = 'This form isn\'t connected yet on the preview site. Please email contact@silo-x.co directly in the meantime.';
+			statusEl.classList.add('is-visible', 'form-status--error');
+		} finally {
+			btn.disabled = false;
+			btn.textContent = 'Send Inquiry';
+		}
+	});
+})();
+</script>
+</body>
+</html>

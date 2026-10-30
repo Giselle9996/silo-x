@@ -1,0 +1,54 @@
+<svg viewBox="0 0 600 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract illustration of overlapping design frames and crop marks, suggesting original creative direction">
+	<defs>
+		<linearGradient id="chromeW" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" stop-color="#eef0f2"/>
+			<stop offset="35%" stop-color="#c4c7cb"/>
+			<stop offset="55%" stop-color="#868a92"/>
+			<stop offset="75%" stop-color="#d4d7db"/>
+			<stop offset="100%" stop-color="#eef0f2"/>
+		</linearGradient>
+	</defs>
+
+	<!-- back frame, rotated -->
+	<g transform="rotate(-6 260 230)">
+		<rect x="110" y="120" width="300" height="210" fill="none" stroke="#6f737a" stroke-width="1" opacity="0.45"/>
+	</g>
+
+	<!-- middle frame -->
+	<g transform="rotate(4 320 220)">
+		<rect x="170" y="90" width="300" height="210" fill="none" stroke="url(#chromeW)" stroke-width="1.5"/>
+		<line x1="170" y1="140" x2="470" y2="140" stroke="#9ba0a7" stroke-width="1" opacity="0.5"/>
+		<line x1="220" y1="90" x2="220" y2="300" stroke="#9ba0a7" stroke-width="1" opacity="0.35"/>
+	</g>
+
+	<!-- front frame, the "active" artboard with crop marks -->
+	<g transform="rotate(-2 300 250)">
+		<rect x="140" y="170" width="260" height="170" fill="#f5f3ef" opacity="0.04" stroke="#f5f3ef" stroke-width="1.5"/>
+		<!-- crop marks -->
+		<g stroke="#f5f3ef" stroke-width="1.5">
+			<line x1="140" y1="170" x2="140" y2="154"/>
+			<line x1="124" y1="170" x2="140" y2="170"/>
+			<line x1="400" y1="170" x2="400" y2="154"/>
+			<line x1="400" y1="170" x2="416" y2="170"/>
+			<line x1="140" y1="340" x2="140" y2="356"/>
+			<line x1="124" y1="340" x2="140" y2="340"/>
+			<line x1="400" y1="340" x2="400" y2="356"/>
+			<line x1="400" y1="340" x2="416" y2="340"/>
+		</g>
+		<!-- content block suggestion -->
+		<rect x="168" y="200" width="90" height="10" fill="#c4c7cb" opacity="0.8"/>
+		<rect x="168" y="222" width="150" height="6" fill="#9ba0a7" opacity="0.5"/>
+		<rect x="168" y="238" width="120" height="6" fill="#9ba0a7" opacity="0.5"/>
+		<rect x="168" y="270" width="70" height="22" fill="none" stroke="#f5f3ef" stroke-width="1.2"/>
+	</g>
+
+	<!-- cursor / pen point accent -->
+	<g transform="translate(372 300)">
+		<path d="M0 0 L22 8 L11 12 L6 23 Z" fill="#f5f3ef" stroke="#1d1d20" stroke-width="0.5"/>
+	</g>
+
+	<!-- floating dot accents -->
+	<circle cx="105" cy="95" r="3" fill="#c4c7cb"/>
+	<circle cx="470" cy="110" r="2" fill="#9ba0a7"/>
+	<circle cx="460" cy="350" r="3" fill="#c4c7cb"/>
+</svg>

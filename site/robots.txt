@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /enroll.html
+Disallow: /success-website.html
+Disallow: /success-operations.html
+
+Sitemap: https://silo-x.co/sitemap.xml

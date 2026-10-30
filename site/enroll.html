@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enroll — SiloX Business Operations</title>
+<meta name="description" content="Enroll in a SiloX Business Operations plan: tell us about your business, then complete your onboarding payment.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="chrome-top-edge"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+	<div class="wrap site-header__inner">
+		<a class="site-logo" href="index.html"><img src="img/logo-horizontal-white.svg" alt="SiloX" width="140" height="48"></a>
+		<nav class="primary-nav" id="primary-nav" aria-label="Primary">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="websites.html">Websites</a></li>
+				<li><a href="operations.html" aria-current="page">Business Operations</a></li>
+				<li><a href="studio.html">Our Studio</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="header-cta">
+			<button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav"><span class="visually-hidden">Menu</span>☰</button>
+		</div>
+	</div>
+</header>
+
+<main id="main">
+<section class="section--dark" style="padding-block:clamp(3rem,5vw,5rem) var(--section-pad);">
+	<div class="wrap">
+		<p class="eyebrow">Enroll</p>
+		<h1 class="display-h1" style="margin-top:1rem;max-width:24ch;" id="enroll-heading">Let's get your <span id="plan-name-inline">plan</span> set up.</h1>
+		<p class="lead" style="margin-top:1rem;max-width:60ch;">Tell us about your business, then one secure checkout confirms it all, the onboarding fee and your monthly subscription start together, same card, same step.</p>
+
+		<div class="editorial-split" style="margin-top:3rem;">
+			<form id="enroll-form" novalidate>
+				<div class="form-field">
+					<label for="biz-name">Business name</label>
+					<input type="text" id="biz-name" name="businessName" required>
+				</div>
+				<div class="form-field">
+					<label for="contact-name">Your name</label>
+					<input type="text" id="contact-name" name="contactName" required>
+				</div>
+				<div class="form-field">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+				<div class="form-field">
+					<label for="company-size">Team size</label>
+					<input type="text" id="company-size" name="companySize" placeholder="e.g. Just me, 2 to 5, 6 to 20">
+				</div>
+				<div class="form-field">
+					<label for="systems">Software or platforms you use today</label>
+					<textarea id="systems" name="systems" placeholder="e.g. QuickBooks, HubSpot, a property management system, spreadsheets"></textarea>
+				</div>
+				<div class="form-field">
+					<label for="repetitive">What's the most repetitive thing on your plate right now?</label>
+					<textarea id="repetitive" name="repetitiveTask"></textarea>
+				</div>
+				<input type="text" name="company_website" class="honeypot-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+				<input type="hidden" name="plan" id="plan-field" value="growth">
+
+				<button type="submit" class="btn btn--primary-on-dark btn--block" style="margin-top:1rem;" id="enroll-checkout-btn">Continue to Secure Checkout</button>
+				<p class="form-status" id="enroll-checkout-status" role="status"></p>
+			</form>
+
+			<div>
+				<div class="order-summary">
+					<h3 class="display-h3" style="margin-bottom:1rem;" id="plan-name-display">Growth Operations</h3>
+					<div class="order-summary__row"><span class="order-summary__label">One-time onboarding (due today)</span><span class="order-summary__value" id="onboarding-fee">$2,295</span></div>
+					<div class="order-summary__row order-summary__total"><span class="order-summary__label">Monthly subscription, starting today</span><span class="order-summary__value" id="monthly-fee">$1,195/mo</span></div>
+				</div>
+				<p class="checkout-notice">You'll be redirected to Stripe's secure checkout. One card, one confirmation, covers the onboarding fee and starts your monthly subscription. Cancel the subscription anytime before your next billing date.</p>
+				<p class="muted" style="margin-top:1rem;font-size:var(--step-small);">Want a different plan? <a href="operations.html#pricing" style="text-decoration:underline;">Compare all 3</a>.</p>
+			</div>
+		</div>
+	</div>
+</section>
+</main>
+
+<footer class="site-footer section--dark">
+	<div class="wrap">
+		<div class="footer-bottom" style="margin-top:0;border-top:none;padding-top:0;">
+			<span>© 2026 SiloX. All rights reserved.</span>
+			<span><a href="legal/privacy.html">Privacy</a> · <a href="legal/terms.html">Terms</a> · <a href="legal/billing-terms.html">Billing Terms</a></span>
+		</div>
+	</div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+<script>
+(function () {
+	var PLANS = {
+		essential: { name: 'Essential Operations', onboarding: 89500, onboardingLabel: '$895', monthlyLabel: '$595/mo' },
+		growth:    { name: 'Growth Operations',    onboarding: 229500, onboardingLabel: '$2,295', monthlyLabel: '$1,195/mo' },
+		advanced:  { name: 'Advanced Operations',  onboarding: 449500, onboardingLabel: '$4,495', monthlyLabel: '$2,295/mo' }
+	};
+	var params = new URLSearchParams(window.location.search);
+	var planKey = params.get('plan');
+	if (!PLANS[planKey]) planKey = 'growth';
+	var plan = PLANS[planKey];
+
+	document.getElementById('plan-name-inline').textContent = plan.name;
+	document.getElementById('plan-name-display').textContent = plan.name;
+	document.getElementById('onboarding-fee').textContent = plan.onboardingLabel;
+	document.getElementById('monthly-fee').textContent = plan.monthlyLabel;
+	document.getElementById('plan-field').value = planKey;
+
+	document.getElementById('enroll-form').addEventListener('submit', function (e) {
+		e.preventDefault();
+		var form = e.target;
+		if (!window.siloxValidate(form)) return;
+		siloxStartCheckout({
+			form: form,
+			type: 'operations',
+			plan: planKey,
+			buttonId: 'enroll-checkout-btn',
+			statusId: 'enroll-checkout-status'
+		});
+	});
+})();
+</script>
+</body>
+</html>
