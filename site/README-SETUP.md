@@ -87,12 +87,16 @@ In the Cloudflare Pages project settings, add these environment variables
   Cloudflare KV namespace or D1 database binding, then wire those TODOs
   up, this is what lets the webhook actually mark an order "paid" and
   lets you look up a customer's intake answers.
-- **No email notifications configured.** `submit-inquiry.js` sends through
-  Resend if `RESEND_API_KEY` and `AGENCY_NOTIFY_EMAIL` are set; neither is
-  set yet, so it currently returns a clear "not configured" error and the
-  contact page falls back to telling the visitor to email
-  contact@silo-x.co directly. The same applies to purchase-confirmation
-  emails, there isn't one yet.
+- **No email notifications configured yet.** `submit-inquiry.js` and
+  `stripe-webhook.js` both send through Resend (`functions/_lib/email.js`)
+  if `RESEND_API_KEY` and `AGENCY_NOTIFY_EMAIL` are set as Cloudflare Pages
+  environment variables; neither is set yet. Until they are, the contact
+  form falls back to telling the visitor to email contact@silo-x.co
+  directly, and paid orders silently skip the confirmation/notification
+  emails (the payment itself still succeeds either way, nothing blocks on
+  email delivery). Once a Resend account and verified sending domain exist,
+  add `RESEND_API_KEY`, `AGENCY_NOTIFY_EMAIL`, and optionally `EMAIL_FROM`
+  to turn both on.
 - **Portfolio has 3 real pieces** (Flussos, Leafless Ashes, Folklore
   Coffee) on `websites.html`, more can be added the same way as they
   become available.
