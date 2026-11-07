@@ -1,0 +1,69 @@
+<svg viewBox="0 0 600 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract illustration contrasting a single scattered node on one side with a clean connected workflow on the other, split by a center line">
+	<defs>
+		<linearGradient id="chromeC" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" stop-color="#eef0f2"/>
+			<stop offset="35%" stop-color="#c4c7cb"/>
+			<stop offset="55%" stop-color="#868a92"/>
+			<stop offset="75%" stop-color="#d4d7db"/>
+			<stop offset="100%" stop-color="#eef0f2"/>
+		</linearGradient>
+	</defs>
+
+	<!-- center divider axis -->
+	<line x1="300" y1="30" x2="300" y2="430" stroke="url(#chromeC)" stroke-width="1.5" opacity="0.55"/>
+	<circle cx="300" cy="30" r="2.5" fill="#c4c7cb"/>
+	<circle cx="300" cy="430" r="2.5" fill="#c4c7cb"/>
+
+	<!-- LEFT: one person-node, scattered irregular connections (manual / ad hoc) -->
+	<g opacity="0.85">
+		<!-- scattered dashed lines, irregular -->
+		<g fill="none" stroke="#9ba0a7" stroke-width="1.2" stroke-dasharray="3 7" opacity="0.6">
+			<path d="M150 180 C 110 160, 80 150, 55 120"/>
+			<path d="M150 180 C 180 140, 190 110, 175 70"/>
+			<path d="M150 180 C 100 220, 70 250, 75 300"/>
+			<path d="M150 180 C 190 230, 210 270, 195 330"/>
+		</g>
+		<!-- loose, unconnected satellite ticks: unstructured work -->
+		<circle cx="55" cy="120" r="3" fill="none" stroke="#9ba0a7" stroke-width="1.2"/>
+		<circle cx="175" cy="70" r="3" fill="none" stroke="#9ba0a7" stroke-width="1.2"/>
+		<circle cx="75" cy="300" r="3" fill="none" stroke="#9ba0a7" stroke-width="1.2"/>
+		<circle cx="195" cy="330" r="3" fill="none" stroke="#9ba0a7" stroke-width="1.2"/>
+		<circle cx="40" cy="220" r="2" fill="#9ba0a7"/>
+		<circle cx="230" cy="150" r="2" fill="#9ba0a7"/>
+
+		<!-- the person node -->
+		<circle cx="150" cy="180" r="26" fill="#1d1d20" stroke="#9ba0a7" stroke-width="1.5"/>
+		<circle cx="150" cy="170" r="7" fill="none" stroke="#f5f3ef" stroke-width="1.6"/>
+		<path d="M133 196 a17 17 0 0 1 34 0" fill="none" stroke="#f5f3ef" stroke-width="1.6"/>
+	</g>
+
+	<!-- RIGHT: clean connected workflow cluster (automated) -->
+	<g>
+		<g fill="none" stroke="#9ba0a7" stroke-width="1.3" opacity="0.65">
+			<path d="M 400 140 C 430 160, 430 190, 410 210"/>
+			<path d="M 410 210 C 440 230, 480 225, 505 195"/>
+			<path d="M 410 210 C 390 250, 395 290, 430 315"/>
+			<path d="M 430 315 C 470 330, 505 320, 525 290"/>
+		</g>
+		<g fill="#f5f3ef" opacity="0.8">
+			<path d="M418 172 l7 -4 l0 8 z" transform="rotate(55 418 172)"/>
+			<path d="M470 205 l7 -4 l0 8 z" transform="rotate(-25 470 205)"/>
+			<path d="M408 268 l7 -4 l0 8 z" transform="rotate(100 408 268)"/>
+		</g>
+		<circle cx="400" cy="140" r="8" fill="none" stroke="#f5f3ef" stroke-width="1.5"/>
+		<circle cx="505" cy="195" r="8" fill="none" stroke="#9ba0a7" stroke-width="1.3"/>
+		<circle cx="430" cy="315" r="8" fill="none" stroke="#9ba0a7" stroke-width="1.3"/>
+		<circle cx="525" cy="290" r="8" fill="none" stroke="#f5f3ef" stroke-width="1.5"/>
+
+		<!-- center automated node with clock hands, chrome ring -->
+		<circle cx="410" cy="210" r="27" fill="#1d1d20" stroke="url(#chromeC)" stroke-width="2"/>
+		<g stroke="#f5f3ef" stroke-width="2" stroke-linecap="round">
+			<line x1="410" y1="210" x2="410" y2="194"/>
+			<line x1="410" y1="210" x2="423" y2="216"/>
+		</g>
+		<circle cx="410" cy="210" r="2" fill="#f5f3ef"/>
+	</g>
+
+	<!-- faint "VS" ticks on the axis -->
+	<circle cx="300" cy="210" r="3.5" fill="url(#chromeC)"/>
+</svg>
