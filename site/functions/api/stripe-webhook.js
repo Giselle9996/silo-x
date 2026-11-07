@@ -92,6 +92,7 @@ async function handleCheckoutCompleted(event, env) {
 		if (env.AGENCY_NOTIFY_EMAIL) {
 			await sendEmail(env, {
 				to: env.AGENCY_NOTIFY_EMAIL,
+				cc: env.AGENCY_NOTIFY_CC,
 				subject: `Paid: ${businessName} (${orderLabel})`,
 				text: agencyEmailText({ contactName, businessName, orderLabel, amount, orderRef, customerEmail, sessionId: session.id })
 			});

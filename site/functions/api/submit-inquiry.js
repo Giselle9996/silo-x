@@ -1,13 +1,14 @@
 /**
  * POST /api/submit-inquiry
  *
- * Handles the Contact / Get Started form. Not wired to an email provider
- * yet, see README-SETUP.md. Once RESEND_API_KEY (or another provider) is
- * configured, this should send a notification to the agency inbox and an
- * autoreply to the submitter. Until then it responds 503 so the contact
- * page's own fallback message (email contact@silo-x.co directly) is shown
- * instead of a false "sent" confirmation.
+ * Handles the Contact / Get Started form, sends a notification to the
+ * agency inbox via Resend (functions/_lib/email.js). If RESEND_API_KEY
+ * isn't configured, responds 503 so the contact page's own fallback
+ * message (email contact@silo-x.co directly) is shown instead of a false
+ * "sent" confirmation.
  */
+
+import { sendEmail } from '../_lib/email.js';
 
 export async function onRequestPost({ request, env }) {
 	let payload;
@@ -26,20 +27,12 @@ export async function onRequestPost({ request, env }) {
 	}
 
 	try {
-		const res = await fetch('https://api.resend.com/emails', {
-			method: 'POST',
-			headers: {
-				'Authorization': `Bearer ${env.RESEND_API_KEY}`,
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				from: env.EMAIL_FROM || 'SiloX <notifications@silo-x.co>',
-				to: env.AGENCY_NOTIFY_EMAIL,
-				subject: `New inquiry: ${payload.name} (${payload.business || 'no business name given'})`,
-				text: formatInquiry(payload)
-			})
+		await sendEmail(env, {
+			to: env.AGENCY_NOTIFY_EMAIL,
+			cc: env.AGENCY_NOTIFY_CC,
+			subject: `New inquiry: ${payload.name} (${payload.business || 'no business name given'})`,
+			text: formatInquiry(payload)
 		});
-		if (!res.ok) throw new Error('Email provider rejected the request.');
 		return json({ ok: true });
 	} catch (err) {
 		return json({ error: 'Could not send the inquiry notification.' }, 502);
