@@ -830,3 +830,25 @@ em.accent { font-style: italic; font-family: var(--font-display); font-weight: 5
 .pricing-grid--fan .pricing-card:nth-child(3) { --fan: 1.4deg; }
 .pricing-grid--fan .pricing-card--featured { --fan: 0deg; --lift: -10px; z-index: 2; }
 @media (max-width: 1000px) { .pricing-grid--fan .pricing-card { --fan: 0deg !important; --lift: 0 !important; } }
+
+/* ==========================================================================
+   33. ICON CHIPS — small line-art accents, same family as the hero motifs
+   ========================================================================== */
+
+.icon-chip { display: inline-flex; width: 56px; height: 56px; flex-shrink: 0; }
+.icon-chip svg { width: 100%; height: 100%; display: block; }
+.icon-chip--sm { width: 40px; height: 40px; }
+.stat .icon-chip { margin-bottom: 1.25rem; }
+.compare-table__col-icon { display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; }
+.task-list-compare__col h4 { display: flex; align-items: center; gap: 0.75rem; }
+.definition-card__icon { margin-bottom: 1rem; }
+.timeline-step__icon { width: 40px; height: 40px; flex-shrink: 0; }
+.footer-cta__icon { margin-bottom: 1.25rem; }
+.phase__icon { margin-bottom: 1rem; }
+.phase__icon .icon-chip { width: 44px; height: 44px; }
+.path-card > .icon-chip { margin-bottom: 1rem; }
+.pricing-card > .icon-chip:first-child { margin-bottom: 1rem; }
+.stat > .icon-chip { margin-bottom: 1.25rem; }
+.hero__motif-badge { display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+.hero__motif-badge .icon-chip { width: 44px; height: 44px; }
+.hero__motif-badge-arrow { color: var(--silox-chrome-1); font-size: 1.1rem; }
