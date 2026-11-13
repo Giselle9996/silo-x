@@ -73,7 +73,7 @@
 			<div>
 				<div class="order-summary">
 					<h3 class="display-h3" style="margin-bottom:1rem;" id="plan-name-display">Growth Operations</h3>
-					<div class="order-summary__row"><span class="order-summary__label">One-time onboarding (due today)</span><span class="order-summary__value" id="onboarding-fee">$2,295</span></div>
+					<div class="order-summary__row"><span class="order-summary__label">One-time onboarding (due today)</span><span class="order-summary__value" id="onboarding-fee">$1,150</span></div>
 					<div class="order-summary__row order-summary__total"><span class="order-summary__label">Monthly subscription, starting today</span><span class="order-summary__value" id="monthly-fee">$1,195/mo</span></div>
 				</div>
 				<p class="checkout-notice">You'll be redirected to Stripe's secure checkout. One card, one confirmation, covers the onboarding fee and starts your monthly subscription. Cancel the subscription anytime before your next billing date.</p>
@@ -98,9 +98,9 @@
 <script>
 (function () {
 	var PLANS = {
-		essential: { name: 'Essential Operations', onboarding: 89500, onboardingLabel: '$895', monthlyLabel: '$595/mo' },
-		growth:    { name: 'Growth Operations',    onboarding: 229500, onboardingLabel: '$2,295', monthlyLabel: '$1,195/mo' },
-		advanced:  { name: 'Advanced Operations',  onboarding: 449500, onboardingLabel: '$4,495', monthlyLabel: '$2,295/mo' }
+		essential: { name: 'Essential Operations', onboarding: 45000, onboardingLabel: '$450', monthlyLabel: '$595/mo' },
+		growth:    { name: 'Growth Operations',    onboarding: 115000, onboardingLabel: '$1,150', monthlyLabel: '$1,195/mo' },
+		advanced:  { name: 'Advanced Operations',  onboarding: 225000, onboardingLabel: '$2,250', monthlyLabel: '$2,295/mo' }
 	};
 	var params = new URLSearchParams(window.location.search);
 	var planKey = params.get('plan');
