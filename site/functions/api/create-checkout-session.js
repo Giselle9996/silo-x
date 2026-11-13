@@ -27,9 +27,9 @@ const PLAN_LABELS = { essential: 'Essential', growth: 'Growth', advanced: 'Advan
 const PRICES_CENTS = {
 	website: 249900,
 	operations: {
-		essential: { onboarding: 89500, monthly: 59500 },
-		growth: { onboarding: 229500, monthly: 119500 },
-		advanced: { onboarding: 449500, monthly: 229500 }
+		essential: { onboarding: 45000, monthly: 59500 },
+		growth: { onboarding: 115000, monthly: 119500 },
+		advanced: { onboarding: 225000, monthly: 229500 }
 	}
 };
 
